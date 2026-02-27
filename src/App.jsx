@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom'
 import PropsBasic from './components/PropsBasic'
 import PropsAdvance from './components/PropsAdvance'
 import EventsHandling from './components/EventsHandling'
+import StatesBasic from './components/StatesBasic'
 import './App.css'
 
 function App() {
@@ -16,15 +17,14 @@ function App() {
         <Link to ="/events">Events Handling</Link>
       </nav>
       <Routes>
-        <Route path="/" element={<h1>Welcome to React Core Concepts</h1>} />
+        <Route path="/" element={<h1> React Core Concepts</h1>} />
         <Route path="/props" element={<PropsBasic />} />
         <Route path="/props-advance" element={<PropsAdvance />} />
         <Route path="/events" element={<EventsHandling />} />
       </Routes>
 
-    {
-
-    }
+    
+      <StatesBasic></StatesBasic>
 
     </>
   )
