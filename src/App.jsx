@@ -4,6 +4,7 @@ import PropsBasic from './components/PropsBasic'
 import PropsAdvance from './components/PropsAdvance'
 import EventsHandling from './components/EventsHandling'
 import StatesBasic from './components/StatesBasic'
+import SuspenseBasic from './components/SuspenseBasic'
 import './App.css'
 
 function App() {
@@ -12,19 +13,20 @@ function App() {
     <> 
      <nav>
         <Link to="/">Home</Link> | &nbsp;
-        <Link to="/props">Props Basic</Link> | &nbsp;
-        <Link to="/props-advance">Props Advance</Link> | &nbsp;
-        <Link to ="/events">Events Handling</Link>
+        <Link to="/props">Props (Basic)</Link> | &nbsp;
+        <Link to="/props-advance">Props (Advance)</Link> | &nbsp;
+        <Link to ="/events">Events Handling</Link> | &nbsp;
+        <Link to ="/states">States</Link> | &nbsp;
+        <Link to ="/suspense">Suspense</Link>
       </nav>
       <Routes>
         <Route path="/" element={<h1> React Core Concepts</h1>} />
         <Route path="/props" element={<PropsBasic />} />
         <Route path="/props-advance" element={<PropsAdvance />} />
         <Route path="/events" element={<EventsHandling />} />
+        <Route path="/states" element={<StatesBasic />} />
+        <Route path="/suspense" element={<SuspenseBasic />} />
       </Routes>
-
-    
-      <StatesBasic></StatesBasic>
 
     </>
   )

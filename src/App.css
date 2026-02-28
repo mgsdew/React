@@ -41,3 +41,14 @@
 .read-the-docs {
   color: #888;
 }
+
+.card_suspense {
+  padding: 10px;
+  border: 2px solid goldenrod;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.post_title {
+  color: #f72828;
+}
