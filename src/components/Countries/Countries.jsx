@@ -1,6 +1,8 @@
-import React, { Suspense, use, useState } from 'react';
+import React, { Suspense, use, useState, useEffect } from 'react';
 import Country from '../Country/Country';
 import './Countries.css'
+import { getCountriesFromLocalStorage as getCountriesFLS, 
+         addCountriesToLocalStorage as addCountryTLS } from '../../utilities/localStorage';
 
 const Countries = ({ countriesPromise }) => {
 
@@ -12,15 +14,26 @@ const [visitedCountries, setVisitedCountries] = useState([])
 
 const [visitedCountriesFlag, setVisitedCountriesFlag] = useState([])
 
+const [visitedFromLS, setVisitedFromLS] = useState([])
+
+useEffect(() => {
+    const data = getCountriesFLS() || []
+    setVisitedFromLS(data)
+}, [])
+
 const handleVisitedCountries = (country) => {
-    // if(visitedCountries.includes(country)){
-    //     setVisitedCountries(visitedCountries.filter(c => c !== country))
-    // } else {
-    //     setVisitedCountries([...visitedCountries, country])
-    // }
-    console.log('Visited Country name:', country.name.common)
+   // console.log('Visited Country name:', country.name.common)
+    // Check if the country is already visited
+    if (visitedFromLS.includes(country.cca3)) {
+        return; // Do not add if already exists
+    }
     const newVisitedCountries = [...visitedCountries, country]
     setVisitedCountries(newVisitedCountries)
+
+    // Add visited country to local storage
+    addCountryTLS(country.cca3)
+    // Update the LS state
+    setVisitedFromLS(getCountriesFLS())
 }
 
 const handleVisitedFlag = (visitedFlags) => {
@@ -33,7 +46,7 @@ const handleVisitedFlag = (visitedFlags) => {
     return (
         <>
             <h2>Total Available Countries data: {countries.length}</h2>
-            <h3>Total Visited Countries: {visitedCountries.length}</h3>
+            <h3>Total Visited Countries: {visitedFromLS.length}</h3>
             <h3>Total Visited Flags: {visitedCountriesFlag.length}</h3>
             <div className='visited-flags-container'>
                 {
