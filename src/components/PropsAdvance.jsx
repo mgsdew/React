@@ -39,8 +39,8 @@ export default function PropsAdvance() {
             { fruitList.map(fruit => <Fruits fruit={fruit}></Fruits>) }   */}
             
 
-            {/* // Send Array of Objects as Props with Unique Key
-            {<Library books={books}></Library> }  */}
+             {/* Send Array of Objects as Props with Unique Key */}
+            {<Library books={books}></Library> } 
         </div>
     )
 }

@@ -9,7 +9,7 @@ function Library({books}) {
       <p>Books Collection: {books.length}</p>
       <ul>
         {
-           books.map(book => <Books book={book}></Books>)
+           books.map(book => <Books key={book.id} book={book}></Books>)
         }
       </ul>
     </>
