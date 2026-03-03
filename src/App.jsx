@@ -6,6 +6,7 @@ import StatesBasic from './components/StatesBasic'
 import StatesAdvance from './components/StatesAdvance'
 import SuspenseBasic from './components/SuspenseBasic'
 import Countries from './components/Countries/Countries'
+import Operations from './components/Operations'
 import './App.css'
 import { Suspense } from 'react'
 
@@ -25,7 +26,8 @@ function App() {
         <Link to ="/states">States (Basic)</Link> | &nbsp;
         <Link to ="/states-advance">States (Advance)</Link> | &nbsp;
         <Link to ="/suspense">Suspense</Link>  | &nbsp;
-        <Link to ="/countries">Countries</Link>
+        <Link to ="/countries">Countries</Link> | &nbsp;
+        <Link to ="/operations">Operations</Link>
       </nav>
       <Routes>
         <Route path="/" element={<h1> React Core Concepts</h1>} />
@@ -40,6 +42,7 @@ function App() {
             <Countries countriesPromise={countriesPromise} />
           </Suspense>
         } />
+        <Route path="/operations" element={<Operations />} />
       </Routes>
     </>
   )
