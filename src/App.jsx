@@ -10,6 +10,7 @@ import Operations from './components/Operations'
 import SimpleForm from './components/SimpleForm'
 import FormAction from './components/FormAction'
 import HookForm from './components/HookForm'
+import ProductManagement from './components/Products/ProductManagement'
 import './App.css'
 import { Suspense } from 'react'
 
@@ -33,7 +34,8 @@ function App() {
         <Link to ="/operations">Operations</Link> | &nbsp;
         <Link to="/simple-form">Simple Form</Link> | &nbsp;
         <Link to="/form-action">Action Form</Link> | &nbsp;
-        <Link to="/hook-form">Form with Hook</Link>
+        <Link to="/hook-form">Form with Hook</Link> | &nbsp;
+        <Link to="/product-management">Product CRUD</Link>
 
       </nav>
       <Routes>
@@ -53,6 +55,7 @@ function App() {
         <Route path="/simple-form" element={<SimpleForm />} />
         <Route path="/form-action" element={<FormAction />} />
         <Route path="/hook-form" element={<HookForm />} />
+        <Route path="/product-management" element={<ProductManagement />} />
       </Routes>
     </>
   )
