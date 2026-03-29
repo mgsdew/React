@@ -30,7 +30,15 @@ This project includes the following components demonstrating React concepts:
 - **StatesAdvance**: Advanced state patterns and state lifting
 - **SuspenseBasic**: Using Suspense for loading states and async operations
 - **Countries**: Fetching country data with Suspense and conditional styling
+- **Forms**: Examples of different ways to handle forms in React:
+  - **SimpleForm**: A basic form with controlled components using `useState`.
+  - **FormAction**: A form that uses `useRef` to access input values.
+  - **HookForm**: A form that utilizes a custom hook to manage input state.
 - **Books, Friends, Fruits, Library, Post, Posts, ToDo, Users**: Additional components for various React patterns
+
+## Custom Hooks
+
+- **useInputFields**: A custom hook to manage state for input fields, demonstrating reusable logic.
 
 ## Code Alignment & Modern React Features
 
