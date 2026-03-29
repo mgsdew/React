@@ -7,6 +7,9 @@ import StatesAdvance from './components/StatesAdvance'
 import SuspenseBasic from './components/SuspenseBasic'
 import Countries from './components/Countries/Countries'
 import Operations from './components/Operations'
+import SimpleForm from './components/SimpleForm'
+import FormAction from './components/FormAction'
+import HookForm from './components/HookForm'
 import './App.css'
 import { Suspense } from 'react'
 
@@ -27,7 +30,11 @@ function App() {
         <Link to ="/states-advance">States (Advance)</Link> | &nbsp;
         <Link to ="/suspense">Suspense</Link>  | &nbsp;
         <Link to ="/countries">Countries</Link> | &nbsp;
-        <Link to ="/operations">Operations</Link>
+        <Link to ="/operations">Operations</Link> | &nbsp;
+        <Link to="/simple-form">Simple Form</Link> | &nbsp;
+        <Link to="/form-action">Action Form</Link> | &nbsp;
+        <Link to="/hook-form">Form with Hook</Link>
+
       </nav>
       <Routes>
         <Route path="/" element={<h1> React Core Concepts</h1>} />
@@ -43,6 +50,9 @@ function App() {
           </Suspense>
         } />
         <Route path="/operations" element={<Operations />} />
+        <Route path="/simple-form" element={<SimpleForm />} />
+        <Route path="/form-action" element={<FormAction />} />
+        <Route path="/hook-form" element={<HookForm />} />
       </Routes>
     </>
   )
